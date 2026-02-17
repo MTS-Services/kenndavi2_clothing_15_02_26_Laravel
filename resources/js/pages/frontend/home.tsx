@@ -13,143 +13,57 @@ export default function Home() {
     };
     return (
         <FrontendLayout>
-            <style dangerouslySetInnerHTML={{
-                __html: `
-                @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
-                    .main_wrap {
-                        font-family: 'Inter', sans-serif;
-                        /* Added a subtle topographical pattern to the background */
-                        background-color: #ffffff;
-                        background-image: url("assets/images/Comingsoon2.svg");
-                        background-size: cover;
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        background-attachment: fixed;
-                    }
-
-                    /* New Hero Background Image */
-                    .hero-bg-overlay {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        width: 100%;
-                        height: 100%;
-                        /* background-image: url("Comingsoon2.svg"); */
-                        background-size: cover;
-                        background-position: center;
-                        background-repeat: no-repeat;
-                        z-index: -1;
-                        filter: blur(80px);
-                        opacity: 0.15;
-                        z-index: -2;
-                        border-radius: 50%;
-                    }
-
-                    .geometric-shape {
-                        position: absolute;
-                        opacity: 0.8;
-                    }
-
-                    .triangle {
-                        width: 0;
-                        height: 0;
-                        border-left: 25px solid transparent;
-                        border-right: 25px solid transparent;
-                        border-bottom: 43px solid #10b981;
-                    }
-
-                    .circle {
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 50%;
-                    }
-
-                    .hexagon {
-                        width: 50px;
-                        height: 43px;
-                        background: #e0e7ff;
-                        position: relative;
-                        opacity: 0.5;
-                    }
-
-                    .hexagon:before,
-                    .hexagon:after {
-                        content: "";
-                        position: absolute;
-                        width: 0;
-                        border-left: 25px solid transparent;
-                        border-right: 25px solid transparent;
-                    }
-
-                    .hexagon:before {
-                        bottom: 100%;
-                        border-bottom: 14px solid #e0e7ff;
-                    }
-
-                    .hexagon:after {
-                        top: 100%;
-                        border-top: 14px solid #e0e7ff;
-                    }
-
-                    .squiggle {
-                        width: 60px;
-                        height: 40px;
-                    }
-
-                    .avatar-ring {
-                        border: 2px solid white;
-                        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-                    }
-
-                    .illustration-container {
-                        max-width: 600px;
-                        margin: 0 auto;
-                        position: relative;
-                    }
-
-                    @keyframes float {
-                        0%, 100% { transform: translateY(0px) rotate(0deg); }
-                        50% { transform: translateY(-10px) rotate(5deg); }
-                    }
-
-                    .float-animation {
-                        animation: float 3s ease-in-out infinite;
-                    }
-                `}} />
-            <div className="relative pt-16 main_wrap min-h-screen">
-                <header className="relative z-10">
-                    <div className="container mx-auto flex justify-center">
-                        <div>
-                            <img src="assets/images/clothes.png" alt="" />
-                        </div>
+            <div className="min-h-screen bg-blush relative overflow-x-hidden before:fixed before:inset-0 before:bg-[url('data:image/svg+xml,%3Csvg viewBox=\'0 0 512 512\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noise\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.75\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noise)\' opacity=\'0.04\'/%3E%3C/svg%3E')] before:pointer-events-none before:z-100 before:opacity-[0.35]">
+                <main
+                    className="relative min-h-screen flex flex-col items-center pt-10 pb-0 overflow-hidden"
+                    style={{
+                        backgroundImage: 'url("assets/images/background2.png")',
+                        paddingTop: 50,
+                        paddingBottom: 50,
+                        backgroundPosition: "center bottom",
+                        backgroundRepeat: "no-repeat",
+                        backgroundSize: "contain",
+                        backgroundAttachment: "fixed"
+                    }}
+                >
+                    {/* Logo */}
+                    <div className="relative z-10 animate-fade-in" style={{ animationDelay: "0s" }}>
+                        <img src="assets/images/logonew.png" alt="Logo" className="w-full h-14" />
                     </div>
-                </header>
-                <main className="relative z-10 container mx-auto px-4 pt-4 sm:pt-8 md:pt-10">
-                    <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
-                        <div className="inline-flex items-center border border-gray-200 rounded-full px-3 sm:px-4 py-1.5 sm:py-2 shadow-sm">
-                            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full mr-2" />
-                            <span className="text-xs sm:text-sm text-gray-200">
-                                Launch Incoming
-                            </span>
-                        </div>
+                    {/* Badge */}
+                    <div className="animate-fade-in mt-8 relative z-10">
+                        <span className="inline-flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-ink/10 rounded-full px-4 py-1.5 text-sm font-body text-ink/80 shadow-sm">
+                            <span className="w-2 h-2 rounded-full bg-accent-custom animate-pulse-dot" />
+                            Launch Incoming
+                        </span>
                     </div>
-                    <h1 className="text-3xl md:text-4xl lg:text-5xl text-white font-inter font-medium text-center mb-6 leading-tight px-6 md:px-20 lg:px-72">
+                    {/* Headline */}
+                    <h1
+                        className="animate-fade-up relative z-10 mt-7 text-center font-display font-medium leading-[1.05] text-ink px-6"
+                        style={{ fontSize: "clamp(2.6rem, 6vw, 4.8rem)", maxWidth: 880 }}
+                    >
                         Sign Up To Our Email List To Get Notified When We Launch
                     </h1>
-                    <p className="text-center text-white text-lg md:text-xl max-w-3xl mx-auto mb-8 px-4">
+                    {/* Subheadline */}
+                    <p
+                        className="animate-fade-in relative z-10 mt-5 text-center font-body text-muted-custom text-base leading-relaxed px-6"
+                        style={{ maxWidth: 520 }}
+                    >
                         An exclusive collection crafted for the bold. Experience the fusion of
                         modern aesthetics and timeless elegance.
                     </p>
-                    <div className="max-w-2xl mx-auto mb-6 px-4">
-                        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-0 rounded-lg overflow-hidden">
+                    {/* Email Form */}
+                    <div className="animate-fade-up relative z-10 mt-8 w-full px-6 flex justify-center">
+
+
+                        <form onSubmit={handleSubmit} className="flex items-center  shadow-card rounded-xl overflow-hidden">
                             <input
                                 type="email"
                                 placeholder="Your Email"
                                 value={data.email}
                                 onChange={(e) => setData('email', e.target.value)}
-                                className="flex-1 px-6 py-4 text-gray-700 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-red-500 rounded-t-lg sm:rounded-l-lg sm:rounded-tr-none"
+                                className="flex-1 bg-white px-6 py-4 text-base font-body text-ink placeholder-ink/30 border-0 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent-custom/25 focus:shadow-input"
+                                style={{ minWidth: 0 }}
                             />
                             <button
                                 type="submit"
@@ -159,28 +73,44 @@ export default function Home() {
                                 Join
                             </button>
                         </form>
-                        {recentlySuccessful && (
-                            <p className="text-center text-green-600 text-sm mt-2">Successfully subscribed!</p>
-                        )}
-                        {errors.email && (
-                            <p className="text-center text-red-600 text-sm mt-2">{errors.email}</p>
-                        )}
                     </div>
-                    <div className="flex flex-col items-center">
-                        <div className="flex -space-x-2 mb-1">
-                            <div className="w-10 h-10 rounded-full   overflow-hidden">
-                                <img src="assets/images/Face 1.png" alt="" className="w-full h-full object-cover" />
+                    {recentlySuccessful && (
+                        <p className="text-center text-green-600 text-sm mt-2">Successfully subscribed!</p>
+                    )}
+                    {errors.email && (
+                        <p className="text-center text-red-600 text-sm mt-2">{errors.email}</p>
+                    )}
+                    {/* Social Proof */}
+                    <div className="flex flex-col items-center justify-center gap-2 animate-fade-in p-4">
+                        <div className="flex -space-x-3">
+                            <div className="w-10 h-10 rounded-full border-2.5 border-white shadow-[0_2px_8px_rgba(26,20,18,0.15)] bg-gray-900 flex items-center justify-center text-lg overflow-hidden">
+                                <img
+                                    src="assets/images/Face 1.png"
+                                    alt="Face 1"
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
-                            <div className="w-10 h-10 rounded-full   overflow-hidden">
-                                <img src="assets/images/Face 2.png" alt="" className="w-full h-full object-cover" />
+                            <div className="w-10 h-10 rounded-full border-2.5 border-white shadow-[0_2px_8px_rgba(26,20,18,0.15)] bg-gray-900 flex items-center justify-center text-lg overflow-hidden">
+                                <img
+                                    src="assets/images/Face 2.png"
+                                    alt="Face 2"
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
-                            <div className="w-10 h-10 rounded-full   overflow-hidden">
-                                <img src="assets/images/Face 3.png" alt="" className="w-full h-full object-cover" />
+                            <div className="w-10 h-10 rounded-full border-2.5 border-white shadow-[0_2px_8px_rgba(26,20,18,0.15)] bg-gray-900 flex items-center justify-center text-lg overflow-hidden">
+                                <img
+                                    src="assets/images/Face 3.png"
+                                    alt="Face 3"
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
                         </div>
-                        <p className="text-sm text-gray-200">Join 39k other creatives</p>
+                        <p className="text-gray-600 text-sm font-medium">
+                            <span className="font-bold text-gray-900">Join 39k other creatives</span>
+                        </p>
                     </div>
                 </main>
+
             </div>
 
         </FrontendLayout>
