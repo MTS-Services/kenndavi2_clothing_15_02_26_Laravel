@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taste of Tha North Side BBQ Sauce</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Lato', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Oswald', sans-serif;
+    }
+
+    /* Floating shapes */
+    .shape-triangle {
+      width: 0; height: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-bottom: 30px solid #22c55e;
+    }
+
+    .shape-circle-purple {
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: #a855f7;
+    }
+
+    .arc-orange {
+      width: 52px;
+      height: 26px;
+      border-top: 4px solid #f97316;
+      border-radius: 50% 50% 0 0;
+    }
+
+    /* Image Backgrounds */
+    .img-top {
+      background-image: url('img-top.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .img-bottom {
+      background-image: url('img-fire.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .img-fire {
+      background-image: url('img-bottom.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Mobile specific adjustment for the grid */
+    @media (max-width: 768px) {
+      .left-panel-container {
+        height: 40vh !important;
+        width: 100% !important;
+      }
+    }
+
+    /* Slide-in animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-up { animation: fadeUp 0.7s ease both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.25s; }
+    .delay-3 { animation-delay: 0.4s; }
+    .delay-4 { animation-delay: 0.55s; }
+  </style>
+</head>
+<body class="bg-white min-h-screen">
+
+  <div class="flex flex-col md:flex-row min-h-screen">
+
+    <div class="left-panel-container w-full md:w-[46%] grid grid-cols-2 grid-rows-2 md:h-screen gap-2 flex-shrink-0">
+      
+      <div class="img-top relative overflow-hidden ">
+        <div class="absolute inset-0 bg-black/20"></div>
+      </div>
+
+      <div class="img-fire relative overflow-hidden row-span-1 md:row-span-2">
+        <div class="absolute inset-0 bg-black/10"></div>
+      </div>
+
+      <div class="img-bottom relative overflow-hidden ">
+        <div class="absolute inset-0 bg-black/10"></div>
+      </div>
+
+    </div>
+
+    <div class="flex-1 flex items-center justify-center p-8 md:p-14 relative overflow-hidden">
+
+      <div class="hidden sm:block absolute top-[10%] left-[10%] shape-triangle"></div>
+      <div class="hidden sm:block absolute bottom-[15%] left-[5%] shape-circle-purple"></div>
+      <div class="hidden sm:block absolute top-[10%] right-[10%] arc-orange"></div>
+      <div class="hidden sm:block absolute top-[15%] right-[5%]">
+        <svg width="38" height="26" viewBox="0 0 38 26" fill="none">
+          <path d="M2 13 Q8 2, 14 13 Q20 24, 26 13 Q32 2, 38 13" stroke="#3b82f6" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="max-w-[520px] w-full text-center ">
+
+        <div class="flex justify-center mb-6 delay-1">
+            <img src="Group.png" alt="Logo" class="w-20 h-20 md:w-24 md:h-24 object-contain">
+        </div>
+
+        <div class="flex justify-center mb-5 delay-2">
+          <div class="inline-flex items-center gap-2  px-4 py-1.5 rounded-full border border-red-100">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500 inline-block"></span>
+            <span class="text-sm text-gray-800 font-medium">Launch Incoming</span>
+          </div>
+        </div>
+
+        <h1 class="text-4xl font-medium font-inter text-gray-900 leading-[1.1] mb-5 tracking-tight delay-3">
+         Sign Up To Our Email List To Get Notified When We Launch
+        </h1>
+
+        <p class="text-gray-500 text-base md:text-lg mb-8 leading-relaxed delay-3">
+          An exclusive collection crafted for the bold. Experience the fusion of modern aesthetics and timeless elegance.
+        </p>
+
+        <form class="flex h-14 rounded-lg overflow-hidden shadow-sm border border-gray-200 mb-8 delay-4">
+          <input
+            type="email"
+            required
+            class="flex-1 px-5 text-gray-800 outline-none bg-gray-100 placeholder:text-gray-400"
+            placeholder="Your Email"
+          />
+          <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold px-8 transition-colors uppercase tracking-wider text-sm">
+            Join
+          </button>
+        </form>
+
+        <div class="flex flex-col items-center justify-center gap-2 delay-5">
+  
+  <div class="flex -space-x-3">
+    <div class="w-10 h-10 rounded-full border-2 border-gray-900 bg-gray-900 flex items-center justify-center text-lg overflow-hidden">
+      <img src="Face 1.png" alt="Face 1" class="w-full h-full object-cover">
+    </div>
+    <div class="w-10 h-10 rounded-full border-2 border-gray-900 bg-gray-900 flex items-center justify-center text-lg overflow-hidden">
+      <img src="Face 2.png" alt="Face 2" class="w-full h-full object-cover">
+    </div>
+    <div class="w-10 h-10 rounded-full border-2 border-gray-900 bg-gray-900 flex items-center justify-center text-lg overflow-hidden">
+      <img src="Face 3.png" alt="Face 3" class="w-full h-full object-cover">
+    </div>
+  </div>
+
+  <p class="text-gray-600 text-sm font-medium">
+    <span class="font-bold text-gray-900">Join 39k other creatives</span>  
+  </p>
+</div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
